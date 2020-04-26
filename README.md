@@ -1,2 +1,2 @@
-# CS486_FinalProject
+# CS485_FinalProject
 Construction DB in MongoDB
