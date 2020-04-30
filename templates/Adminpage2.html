@@ -1,0 +1,93 @@
+<html>
+
+<head>
+
+<body style="background-color:rgb(178, 217, 223);">
+
+  {%if output %}
+  <h1><strong> {{output}} </strong></h1>
+  {%endif%}
+
+  <h1
+    style="font-size:350%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:rgb(241, 241, 241);">
+    <b> Census Query Website</b></h1>
+  <h1
+    style="font-size:150%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:rgb(241, 241, 241);">
+    <b> Insert Into Census Database</b></h1>
+
+  <form action="insertrelation" method="POST">
+    <!-- form to INSERT INTO RelationStatusTable, with user variables -->
+    <label for="prompt"><u>Enter data below to INSERT INTO RelationStatus Table:</u></label><br>
+    <label for="RelationStatusID Value(#)">RelationStatusID Value(#):</label><br>
+
+    <input type="text" id="RelationshipstatusID" name="RelationshipstatusID"><br>
+
+    <label for="Relationship Status Value">Relationship Status Value:</label><br>
+
+    <input type="text" id="RelationshipStatusValue" name="RelationshipStatusValue"><br>
+
+    <input type="submit" value="Insert Into RelationStatus Table">
+
+  </form>
+
+  <form action="insertincome" method="POST">
+    <!-- form to INSERT INTO IncomeTable, with user variables -->
+    <label for="fname"><u>Enter data below to INSERT INTO Income Table:</u></label><br>
+    <label for="IncomeID Value(#)">IncomeID Value(9 or higher):</label><br>
+    <input type="text" id="IncomeID Value(#)" name="IncomeID"><br>
+    <label for="Occupation Status Value">Occupation Status Value:</label><br>
+    <input type="text" id="Occupation Status Value" name="OccupationStatus"><br>
+    <label for="Income Amount Value(#)">Income Amount Value(#):</label><br>
+    <input type="text" id="Income Amount Value(#)" name="IncomeAmount"><br>
+    <input type="submit" value="Insert Into Income Table">
+  </form>
+
+  <h1
+    style="font-size:150%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:rgb(241, 241, 241);">
+    <b> Update Census Database</b></h1>
+
+  <form action="updateage" method="POST">
+    <!-- form to UPDATE Age Range and AgeID, with user variables, in Age Table  -->
+    <label for="prompt2"><u>Enter data below to UPDATE Age Table:</u></label><br>
+    <label for="Set Age Range">Set Age Range(Numerical Range):</label><br>
+
+    <input type="text" id="SetAgeRange" name="SetAgeRange"><br>
+    <label for="Corresponding AgeID">Corresponding AgeID(1-12):</label><br>
+
+    <input type="text" id="whereAgeID" name="whereAgeID"><br>
+
+    <input type="submit" value="Update Age Table">
+  </form>
+
+  <form action="updateeducation" method="POST">
+    <!-- form to UPDATE Education Level and EducationID, with user variables, in Education Table  -->
+    <label for="fname"><u>Enter data below to UPDATE Education Table:</u></label><br>
+    <label for="Education Level">Set Education Level:</label><br>
+
+    <input type="text" id="Education Level" name="setEducationLevel"><br>
+    <label for="Corresponding EducationID">Corresponding EducationID(0-8):</label><br>
+
+    <input type="text" id="whereEducationID" name="whereEducationID"><br>
+
+    <input type="submit" value="Update Education Table">
+
+  </form>
+
+  <h1
+    style="font-size:150%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:rgb(241, 241, 241);">
+    <b> Delete Person From Census Database</b></h1>
+
+  <!-- form to Delete Person from Person Table, based on user input of ID  -->
+  <form action="deleteperson" method="POST">
+    <label for="fname"><u>Enter ID Number Below to Delete From Person Table:</u></label><br>
+    <label for="PersonID">ID To Be Deleted:</label><br>
+    <input type="text" id="PersonID" name="PersonDelete"><br>
+
+    <input type="submit" value="Delete Person">
+
+  </form>
+
+</body>
+</head>
+
+</html>

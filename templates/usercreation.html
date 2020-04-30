@@ -1,0 +1,31 @@
+<body style="background-color:rgb(143, 180, 236);">
+    <h1
+        style="font-size:350%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:whitesmoke;">
+        <b> Census Query Website</b></h1>
+    {%if display %}
+    <h1><strong> {{display}} </strong></h1>
+    {%endif%}
+    <form action="handleCreation" method="post">
+
+        <h4
+            style="font-size:150%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:whitesmoke;">
+            <b> Census New User Creation</b></h4>
+        <div class="container">
+            <label for="uname"><b>Username</b></label>
+            <input type="text" id="username" placeholder="Enter Username" name="uname" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" id="password" placeholder="Enter Password" name="psw" required>
+
+            <label for="psw"><b>Confirm Password</b></label>
+            <input type="password" id="password" placeholder="Enter Password" name="psw2" required>
+
+
+            <button type="submit">Create</button>
+        </div>
+
+        <h2 style="text-align:center; background-color:rgb(247, 224, 167)"><a href="visitorpage2.html">Click
+                here to Access Site as Visitor</a></h2>
+        <h2 style="text-align:center; background-color:rgb(247, 224, 167)"><a href="loginpage.html">Click
+                here to go back to login</a></h2>
+    </form>

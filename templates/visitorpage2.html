@@ -1,0 +1,500 @@
+<html>
+
+<head>
+
+<body>
+
+    <body style="background-color:rgb(178, 217, 223);">   
+
+        <h1
+            style="font-size:350%; font-family: 'Times New Roman', Times, serif; text-align: center;background-color:rgb(241, 241, 241);">
+            <b> Census Query Website</b></h1> 
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <div> <!-- Container for JS, dropdownlist 1 -->
+            <script language="JavaScript" type="text/javascript"> 
+                function dynamicdropdown(listindex) {  
+                    document.getElementById("sub_subcategory").length = 0;
+                    document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                    document.getElementById("subcategory").length = 0;
+                    switch (listindex) {
+                        case "Age":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("AgeRange", "AgeRange");
+
+                            break;
+
+                        case "Education":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("EducationLevel", "EducationLevel");
+
+                            break;
+                        case "Gender":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("Gender", "GenderState");
+
+                            break;
+                        case "Income":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("OccupationStatus", "OccupationStatus");
+                            document.getElementById("subcategory").options[2] = new Option("IncomeAmount", "IncomeAmount");
+
+                            break;
+                        case "Race":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("Race", "RaceName");
+
+                            break;
+                        case "Region":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("Region", "RegionName");
+
+                            break;
+                        case "RelationStatus":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("RelationshipStatus", "RelationshipStatus");
+
+                            break;
+                        case "State":
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            document.getElementById("subcategory").options[1] = new Option("State", "StateName");
+
+                            break;
+                        default:
+                            document.getElementById("subcategory").options[0] = new Option("Please select follow-up", "");
+                            break;
+                    }
+                    return true;
+                }
+
+                function dynamicdropdownone(listindex) {
+                    document.getElementById("sub_subcategory").length = 0;
+                    switch (listindex) {
+                        case "AgeRange":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("0-5", "0-5");
+                            document.getElementById("sub_subcategory").options[2] = new Option("6-15", "6-15");
+                            document.getElementById("sub_subcategory").options[3] = new Option("16-25", "16-25");
+                            document.getElementById("sub_subcategory").options[4] = new Option("26-35", "26-35");
+                            document.getElementById("sub_subcategory").options[5] = new Option("36-45", "36-45");
+                            document.getElementById("sub_subcategory").options[6] = new Option("46-55", "46-55");
+                            document.getElementById("sub_subcategory").options[7] = new Option("56-65", "56-65");
+                            document.getElementById("sub_subcategory").options[8] = new Option("66-75", "66-75");
+                            document.getElementById("sub_subcategory").options[9] = new Option("76-85", "76-85");
+                            document.getElementById("sub_subcategory").options[10] = new Option("86-95", "86-95");
+                            document.getElementById("sub_subcategory").options[11] = new Option("96-105", "96-105");
+                            document.getElementById("sub_subcategory").options[12] = new Option("106-115", "106-115");
+                            break;
+
+                        case "EducationLevel":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("No Known Education", "No Known Education");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Some High School", "Some High School");
+                            document.getElementById("sub_subcategory").options[3] = new Option("High School Diploma", "High School Diploma");
+                            document.getElementById("sub_subcategory").options[4] = new Option("Some College", "Some College");
+                            document.getElementById("sub_subcategory").options[5] = new Option("Technical Degree", "Technical Degree");
+                            document.getElementById("sub_subcategory").options[6] = new Option("Associates Degree", "Associates Degree");
+                            document.getElementById("sub_subcategory").options[7] = new Option("Bachelors Degree", "Bachelors Degree");
+                            document.getElementById("sub_subcategory").options[8] = new Option("Masters Degree", "Masters Degree");
+                            document.getElementById("sub_subcategory").options[9] = new Option("Doctorate", "Doctorate");
+                            break;
+                        case "GenderState":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("Female", "Female");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Male", "Male");
+                            document.getElementById("sub_subcategory").options[3] = new Option("Gender-Diverse", "Gender-Diverse");
+                            break;
+
+                        case "OccupationStatus":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("Unemployed", "Unemployed");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Seasonal", "Seasonal");
+                            document.getElementById("sub_subcategory").options[3] = new Option("Part-Time Employed", "Part-Time Employed");
+                            document.getElementById("sub_subcategory").options[4] = new Option("Full-Time Employed", "Full-Time Employed");
+
+                            break;
+                        case "IncomeAmount":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("0", "0");
+                            document.getElementById("sub_subcategory").options[2] = new Option(">10,000", ">10,000");
+                            document.getElementById("sub_subcategory").options[3] = new Option(">25,000", ">25,000");
+                            document.getElementById("sub_subcategory").options[4] = new Option("25,000-50,000", "25,000-50,000");
+                            document.getElementById("sub_subcategory").options[5] = new Option("50,000-75,000", "50,000-75,000");
+                            document.getElementById("sub_subcategory").options[6] = new Option("75,000-100,000", "75,000-100,000");
+                            document.getElementById("sub_subcategory").options[7] = new Option("100,000-150,000", "100,000-150,000");
+                            document.getElementById("sub_subcategory").options[8] = new Option("150,000-250,000", "150,000-250,000");
+                            document.getElementById("sub_subcategory").options[9] = new Option("250,000<", "250,000<");
+                            break;
+
+                        case "RaceName":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("White", "White");
+                            document.getElementById("sub_subcategory").options[2] = new Option("African-American", "African-American");
+                            document.getElementById("sub_subcategory").options[3] = new Option("American-Indian or Alaska Native", "American-Indian or Alaska Native");
+                            document.getElementById("sub_subcategory").options[4] = new Option("Asian", "Asian");
+                            document.getElementById("sub_subcategory").options[5] = new Option("Hawaii Native or Other Pacific Islander", "Hawaii Native or Other Pacific Islander");
+                            break;
+                        case "RegionName":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("Northwest", "Northwest");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Midwest", "Midwest");
+                            document.getElementById("sub_subcategory").options[3] = new Option("South", "South");
+                            document.getElementById("sub_subcategory").options[4] = new Option("West", "West");
+                            break;
+                        case "RelationshipStatus":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("Single", "Single");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Married", "Married");
+                            document.getElementById("sub_subcategory").options[3] = new Option("Divorced", "Divorced");
+                            document.getElementById("sub_subcategory").options[4] = new Option("Widowed", "Widowed");
+                            document.getElementById("sub_subcategory").options[5] = new Option("DomesticPartnership", "DomesticPartnership");
+                            break;
+                        case "StateName":
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            document.getElementById("sub_subcategory").options[1] = new Option("Alabama", "Alabama");
+                            document.getElementById("sub_subcategory").options[2] = new Option("Alaska", "Alaska");
+                            document.getElementById("sub_subcategory").options[3] = new Option("Arizona", "Arizona");
+                            document.getElementById("sub_subcategory").options[4] = new Option("Arkansas", "Arkansas");
+                            document.getElementById("sub_subcategory").options[5] = new Option("California", "California");
+                            document.getElementById("sub_subcategory").options[6] = new Option("Colorado", "Colorado");
+                            document.getElementById("sub_subcategory").options[7] = new Option("Connecticut", "Connecticut");
+                            document.getElementById("sub_subcategory").options[8] = new Option("Delaware", "Delaware");
+                            document.getElementById("sub_subcategory").options[9] = new Option("Florida", "Florida");
+                            document.getElementById("sub_subcategory").options[10] = new Option("Georgia", "Georgia");
+                            document.getElementById("sub_subcategory").options[11] = new Option("Hawaii", "Hawaii");
+                            document.getElementById("sub_subcategory").options[12] = new Option("Idaho", "Idaho");
+                            document.getElementById("sub_subcategory").options[13] = new Option("Illinois", "Illinois");
+                            document.getElementById("sub_subcategory").options[14] = new Option("Indiana", "Indiana");
+                            document.getElementById("sub_subcategory").options[15] = new Option("Iowa", "Iowa");
+                            document.getElementById("sub_subcategory").options[16] = new Option("Kansas", "Kansas");
+                            document.getElementById("sub_subcategory").options[17] = new Option("Kentucky", "Kentucky");
+                            document.getElementById("sub_subcategory").options[18] = new Option("Louisiana", "Louisiana");
+                            document.getElementById("sub_subcategory").options[19] = new Option("Maine", "Maine");
+                            document.getElementById("sub_subcategory").options[20] = new Option("Maryland", "Maryland");
+                            document.getElementById("sub_subcategory").options[21] = new Option("Massachusetts", "Massachusetts");
+                            document.getElementById("sub_subcategory").options[22] = new Option("Michigan", "Michigan");
+                            document.getElementById("sub_subcategory").options[23] = new Option("Minnesota", "Minnesota");
+                            document.getElementById("sub_subcategory").options[24] = new Option("Mississippi", "Mississippi");
+                            document.getElementById("sub_subcategory").options[25] = new Option("Missouri", "Missouri");
+                            document.getElementById("sub_subcategory").options[26] = new Option("Montana", "Montana");
+                            document.getElementById("sub_subcategory").options[27] = new Option("Nebraska", "Nebraska");
+                            document.getElementById("sub_subcategory").options[28] = new Option("Nevada", "Nevada");
+                            document.getElementById("sub_subcategory").options[29] = new Option("New Hampshire", "New Hampshire");
+                            document.getElementById("sub_subcategory").options[30] = new Option("New Jersey", "New Jersey");
+                            document.getElementById("sub_subcategory").options[31] = new Option("New Mexico", "New Mexico");
+                            document.getElementById("sub_subcategory").options[32] = new Option("New York", "New York");
+                            document.getElementById("sub_subcategory").options[33] = new Option("North Carolina", "North Carolina");
+                            document.getElementById("sub_subcategory").options[34] = new Option("North Dakota", "North Dakota");
+                            document.getElementById("sub_subcategory").options[35] = new Option("Ohio", "Ohio");
+                            document.getElementById("sub_subcategory").options[36] = new Option("Oklahoma", "Oklahoma");
+                            document.getElementById("sub_subcategory").options[37] = new Option("Oregon", "Oregon");
+                            document.getElementById("sub_subcategory").options[38] = new Option("Pennsylvania", "Pennsylvania");
+                            document.getElementById("sub_subcategory").options[39] = new Option("Rhode Island", "Rhode Island");
+                            document.getElementById("sub_subcategory").options[40] = new Option("South Carolina", "South Carolina");
+                            document.getElementById("sub_subcategory").options[41] = new Option("South Dakota", "South Dakota");
+                            document.getElementById("sub_subcategory").options[42] = new Option("Tennessee", "Tennessee");
+                            document.getElementById("sub_subcategory").options[43] = new Option("Texas", "Texas");
+                            document.getElementById("sub_subcategory").options[44] = new Option("Utah", "Utah");
+                            document.getElementById("sub_subcategory").options[45] = new Option("Vermont", "Vermont");
+                            document.getElementById("sub_subcategory").options[46] = new Option("Virginia", "Virginia");
+                            document.getElementById("sub_subcategory").options[47] = new Option("Washington", "Washington");
+                            document.getElementById("sub_subcategory").options[48] = new Option("West Virginia", "West Virginia");
+                            document.getElementById("sub_subcategory").options[49] = new Option("Wisconsin", "Wisconsin");
+                            document.getElementById("sub_subcategory").options[50] = new Option("Wyoming", "Wyoming");
+                            break;
+                        default:
+                            document.getElementById("sub_subcategory").options[0] = new Option("Please select preference", "");
+                            break;
+                    }
+                    return true;
+                }
+            </script>
+        </div>
+        <!-- 2nd script for 2nd set of dropdowns -->
+
+        <script language="JavaScript" type="text/javascript">
+            function dynamicdropdowntwo(listindex2) {
+                document.getElementById("sub_subcategory2").length = 0;
+                document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                document.getElementById("subcategory2").length = 0;
+                switch (listindex2) {
+                    case "Age":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("AgeRange", "AgeRange");
+
+                        break;
+
+                    case "Education":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("EducationLevel", "EducationLevel");
+
+                        break;
+                    case "Gender":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("Gender", "GenderState");
+
+                        break;
+                    case "Income":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("OccupationStatus", "OccupationStatus");
+                        document.getElementById("subcategory2").options[2] = new Option("IncomeAmount", "IncomeAmount");
+
+                        break;
+                    case "Race":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("Race", "RaceName");
+
+                        break;
+                    case "Region":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("Region", "RegionName");
+
+                        break;
+                    case "RelationStatus":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("RelationshipStatus", "RelationshipStatus");
+
+                        break;
+                    case "State":
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        document.getElementById("subcategory2").options[1] = new Option("State", "StateName");
+
+                        break;
+                    default:
+                        document.getElementById("subcategory2").options[0] = new Option("Please select follow-up", "");
+                        break;
+                }
+                return true;
+            }
+
+            function dynamicdropdown2(listindex2) {
+                document.getElementById("sub_subcategory2").length = 0;
+                switch (listindex2) {
+                    case "AgeRange":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("0-5", "0-5");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("6-15", "6-15");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("16-25", "16-25");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("26-35", "26-35");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("36-45", "36-45");
+                        document.getElementById("sub_subcategory2").options[6] = new Option("46-55", "46-55");
+                        document.getElementById("sub_subcategory2").options[7] = new Option("56-65", "56-65");
+                        document.getElementById("sub_subcategory2").options[8] = new Option("66-75", "66-75");
+                        document.getElementById("sub_subcategory2").options[9] = new Option("76-85", "76-85");
+                        document.getElementById("sub_subcategory2").options[10] = new Option("86-95", "86-95");
+                        document.getElementById("sub_subcategory2").options[11] = new Option("96-105", "96-105");
+                        document.getElementById("sub_subcategory2").options[12] = new Option("106-115", "106-115");
+                        break;
+
+                    case "EducationLevel":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("No Known Education", "No Known Education");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Some High School", "Some High School");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("High School Diploma", "High School Diploma");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("Some College", "Some College");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("Technical Degree", "Technical Degree");
+                        document.getElementById("sub_subcategory2").options[6] = new Option("Associates Degree", "Associates Degree");
+                        document.getElementById("sub_subcategory2").options[7] = new Option("Bachelors Degree", "Bachelors Degree");
+                        document.getElementById("sub_subcategory2").options[8] = new Option("Masters Degree", "Masters Degree");
+                        document.getElementById("sub_subcategory2").options[9] = new Option("Doctorate", "Doctorate");
+                        break;
+                    case "GenderState":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("Female", "Female");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Male", "Male");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("Gender-Diverse", "Gender-Diverse");
+                        break;
+
+                    case "OccupationStatus":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("Unemployed", "Unemployed");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Seasonal", "Seasonal");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("Part-Time Employed", "Part-Time Employed");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("Full-Time Employed", "Full-Time Employed");
+
+                        break;
+                    case "IncomeAmount":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("0", "0");
+                        document.getElementById("sub_subcategory2").options[2] = new Option(">10,000", ">10,000");
+                        document.getElementById("sub_subcategory2").options[3] = new Option(">25,000", ">25,000");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("25,000-50,000", "25,000-50,000");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("50,000-75,000", "50,000-75,000");
+                        document.getElementById("sub_subcategory2").options[6] = new Option("75,000-100,000", "75,000-100,000");
+                        document.getElementById("sub_subcategory2").options[7] = new Option("100,000-150,000", "100,000-150,000");
+                        document.getElementById("sub_subcategory2").options[8] = new Option("150,000-250,000", "150,000-250,000");
+                        document.getElementById("sub_subcategory2").options[9] = new Option("250,000<", "250,000<");
+                        break;
+
+                    case "RaceName":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("White", "White");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("African-American", "African-American");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("American-Indian or Alaska Native", "American-Indian or Alaska Native");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("Asian", "Asian");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("Hawaii Native or Other Pacific Islanders", "Hawaii Native or Other Pacific Islanders");
+                        break;
+                    case "RegionName":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("Northwest", "Northwest");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Midwest", "Midwest");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("South", "South");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("West", "West");
+                        break;
+                    case "RelationshipStatus":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("Single", "Single");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Married", "Married");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("Divorced", "Divorced");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("Widowed", "Widowed");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("DomesticPartnership", "DomesticPartnership");
+                        break;
+                    case "StateName":
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        document.getElementById("sub_subcategory2").options[1] = new Option("Alabama", "Alabama");
+                        document.getElementById("sub_subcategory2").options[2] = new Option("Alaska", "Alaska");
+                        document.getElementById("sub_subcategory2").options[3] = new Option("Arizona", "Arizona");
+                        document.getElementById("sub_subcategory2").options[4] = new Option("Arkansas", "Arkansas");
+                        document.getElementById("sub_subcategory2").options[5] = new Option("California", "California");
+                        document.getElementById("sub_subcategory2").options[6] = new Option("Colorado", "Colorado");
+                        document.getElementById("sub_subcategory2").options[7] = new Option("Connecticut", "Connecticut");
+                        document.getElementById("sub_subcategory2").options[8] = new Option("Delaware", "Delaware");
+                        document.getElementById("sub_subcategory2").options[9] = new Option("Florida", "Florida");
+                        document.getElementById("sub_subcategory2").options[10] = new Option("Georgia", "Georgia");
+                        document.getElementById("sub_subcategory2").options[11] = new Option("Hawaii", "Hawaii");
+                        document.getElementById("sub_subcategory2").options[12] = new Option("Idaho", "Idaho");
+                        document.getElementById("sub_subcategory2").options[13] = new Option("Illinois", "Illinois");
+                        document.getElementById("sub_subcategory2").options[14] = new Option("Indiana", "Indiana");
+                        document.getElementById("sub_subcategory2").options[15] = new Option("Iowa", "Iowa");
+                        document.getElementById("sub_subcategory2").options[16] = new Option("Kansas", "Kansas");
+                        document.getElementById("sub_subcategory2").options[17] = new Option("Kentucky", "Kentucky");
+                        document.getElementById("sub_subcategory2").options[18] = new Option("Louisiana", "Louisiana");
+                        document.getElementById("sub_subcategory2").options[19] = new Option("Maine", "Maine");
+                        document.getElementById("sub_subcategory2").options[20] = new Option("Maryland", "Maryland");
+                        document.getElementById("sub_subcategory2").options[21] = new Option("Massachusetts", "Massachusetts");
+                        document.getElementById("sub_subcategory2").options[22] = new Option("Michigan", "Michigan");
+                        document.getElementById("sub_subcategory2").options[23] = new Option("Minnesota", "Minnesota");
+                        document.getElementById("sub_subcategory2").options[24] = new Option("Mississippi", "Mississippi");
+                        document.getElementById("sub_subcategory2").options[25] = new Option("Missouri", "Missouri");
+                        document.getElementById("sub_subcategory2").options[26] = new Option("Montana", "Montana");
+                        document.getElementById("sub_subcategory2").options[27] = new Option("Nebraska", "Nebraska");
+                        document.getElementById("sub_subcategory2").options[28] = new Option("Nevada", "Nevada");
+                        document.getElementById("sub_subcategory2").options[29] = new Option("New Hampshire", "New Hampshire");
+                        document.getElementById("sub_subcategory2").options[30] = new Option("New Jersey", "New Jersey");
+                        document.getElementById("sub_subcategory2").options[31] = new Option("New Mexico", "New Mexico");
+                        document.getElementById("sub_subcategory2").options[32] = new Option("New York", "New York");
+                        document.getElementById("sub_subcategory2").options[33] = new Option("North Carolina", "North Carolina");
+                        document.getElementById("sub_subcategory2").options[34] = new Option("North Dakota", "North Dakota");
+                        document.getElementById("sub_subcategory2").options[35] = new Option("Ohio", "Ohio");
+                        document.getElementById("sub_subcategory2").options[36] = new Option("Oklahoma", "Oklahoma");
+                        document.getElementById("sub_subcategory2").options[37] = new Option("Oregon", "Oregon");
+                        document.getElementById("sub_subcategory2").options[38] = new Option("Pennsylvania", "Pennsylvania");
+                        document.getElementById("sub_subcategory2").options[39] = new Option("Rhode Island", "Rhode Island");
+                        document.getElementById("sub_subcategory2").options[40] = new Option("South Carolina", "South Carolina");
+                        document.getElementById("sub_subcategory2").options[41] = new Option("South Dakota", "South Dakota");
+                        document.getElementById("sub_subcategory2").options[42] = new Option("Tennessee", "Tennessee");
+                        document.getElementById("sub_subcategory2").options[43] = new Option("Texas", "Texas");
+                        document.getElementById("sub_subcategory2").options[44] = new Option("Utah", "Utah");
+                        document.getElementById("sub_subcategory2").options[45] = new Option("Vermont", "Vermont");
+                        document.getElementById("sub_subcategory2").options[46] = new Option("Virginia", "Virginia");
+                        document.getElementById("sub_subcategory2").options[47] = new Option("Washington", "Washington");
+                        document.getElementById("sub_subcategory2").options[48] = new Option("West Virginia", "West Virginia");
+                        document.getElementById("sub_subcategory2").options[49] = new Option("Wisconsin", "Wisconsin");
+                        document.getElementById("sub_subcategory2").options[50] = new Option("Wyoming", "Wyoming");
+                        break;
+                    default:
+                        document.getElementById("sub_subcategory2").options[0] = new Option("Please select preference", "");
+                        break;
+                }
+                return true;
+            }
+        </script>
+
+        <title>Dynamic Drop Down List</title> 
+
+        <body>
+            <form action="twoJoinsQuery" method="POST"> <!-- Form connecting to 1st set dropdowns to Python, returns results -->
+                <div class="category_div" id="category_div">Please select query:
+                    <select name="category" class="required-entry" id="category"
+                        onchange="javascript: dynamicdropdown(this.options[this.selectedIndex].value);">
+                        <option value="">Select Query</option>
+                        <option value="Age">Age</option>
+                        <option value="Education">Education</option>
+                        <option value="Gender">Gender</option>
+                        <option value="Income">Income</option>
+                        <option value="Race">Race</option>
+                        <option value="Region">Region</option>
+                        <option value="RelationStatus">RelationStatus</option>
+                        <option value="State">State</option>
+                    </select>
+                </div>
+                <div class="sub_category_div" id="sub_category_div">Please select additional query:
+                    <script type="text/javascript" language="JavaScript">
+                        document.write('<select name="subcategory" id="subcategory" onchange="javascript: dynamicdropdownone(this.options[this.selectedIndex].value);"><option value="">Please select framework</option></select>')
+                    </script>
+                    <noscript>
+                        <select name="subcategory" id="subcategory">
+                            <option value="">Please select final preference</option>
+                        </select>
+                    </noscript>
+                </div>
+                <div class="sub_subcategory_div" id="sub_subcategory_div">Please select final preference:
+                    <script type="text/javascript" language="JavaScript">
+                        document.write('<select name="sub_subcategory" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex].value);" id="sub_subcategory"><option value="">Please select framework version</option></select>')
+                    </script>
+
+                    <noscript>
+                        <select name="sub_subcategory" id="sub_subcategory">
+                            <option value="">Please select final preference</option>
+                        </select>
+                    </noscript>
+                </div>
+                <!-- 2nd set of dropdowns -->
+                <div class="category_div2" id="category_div2">Please select query:
+                    <select name="category2" class="required-entry" id="category2"
+                        onchange="javascript: dynamicdropdowntwo(this.options[this.selectedIndex].value);">
+                        <option value="">Select Query</option>
+                        <option value="Age">Age</option>
+                        <option value="Education">Education</option>
+                        <option value="Gender">Gender</option>
+                        <option value="Income">Income</option>
+                        <option value="Race">Race</option>
+                        <option value="Region">Region</option>
+                        <option value="RelationStatus">RelationStatus</option>
+                        <option value="State">State</option>
+                    </select>
+                </div>
+                <div class="sub_category_div2" id="sub_category_div2">Please select additional query:
+                    <script type="text/javascript" language="JavaScript">
+                        document.write('<select name="subcategory2" id="subcategory2" onchange="javascript: dynamicdropdown2(this.options[this.selectedIndex].value);"><option value="">Please select framework</option></select>')
+                    </script>
+                    <noscript>
+                        <select name="subcategory2" id="subcategory2">
+                            <option value="">Please select final preference</option>
+                        </select>
+                    </noscript>
+                </div>
+                <div class="sub_subcategory_div2" id="sub_subcategory_div2">Please select final preference:
+                    <script type="text/javascript" language="JavaScript">
+                        document.write('<select name="sub_subcategory2" onchange="javascript: urlRedirectTo(this.options[this.selectedIndex2].value);" id="sub_subcategory2"><option value="">Please select framework version</option></select>')
+                    </script>
+
+                    <noscript>
+                        <select name="sub_subcategory2" id="sub_subcategory2">
+                            <option value="">Please select final preference</option>
+                        </select>
+                    </noscript>
+                </div>
+
+
+                <button type="submit" formaction="twoJoinsQuery" onclick="dynamicdropdown(listindex)"
+                    onclick="dynamicdropdown2(listindex2)">Submit</button>
+            </form>
+        </body>
+
+        <br>
+        {%if output %}
+        <h1><strong> {{output}} </strong></h1>
+        {%endif%}
+
+</html>
